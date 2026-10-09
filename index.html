@@ -4,82 +4,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Derence Event Organizer</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @custom-variant dark (&:where(.dark, .dark *));
+
+        @layer components {
+            .bg-primary {
+                @apply bg-white dark:bg-slate-900;
+            }
+
+            .text-primary {
+                @apply text-slate-900 dark:text-white;
+            }
+
+            .text-secondary {
+                @apply text-orange-500 dark:text-orange-400;
+            }
+
+            .btn-primary {
+                @apply bg-black text-white p-3 rounded-[20px] transition-colors duration-300 ease-in-out hover:bg-yellow-500 dark:bg-slate-700 dark:hover:bg-slate-600;
+            }
+
+            .btn-secondary {
+                @apply bg-orange-500 text-white p-3 rounded-[20px] transition-colors duration-300 ease-in-out hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700;
+            }
+
+            .card-primary {
+                @apply border-2 border-black p-5 bg-orange-400 dark:border-slate-800 dark:bg-slate-900 rounded-lg shadow-md;
+            }
+
+            .card-secondary {
+                @apply border-2 border-black p-5 bg-orange-200 dark:border-slate-800 dark:bg-slate-800 rounded-lg shadow-md;
+            }
+        }
     </style>
 </head>
 
-<div class="flex justify-center gap-4 my-5">
-        <button id="switch" class="bg-black text-white p-3 rounded-[20px] transition-colors duration-600 ease-in-out hover:bg-yellow-500">
+<body class="bg-primary text-primary text-center border-25 border-orange-500 min-h-screen p-4">
+
+    <!-- Theme Toggle Controls -->
+    <div class="flex justify-center gap-4 my-5">
+        <button id="switch" class="btn-secondary">
             SWITCH
         </button>
-        <button id="toggledark" class="bg-black text-white p-3 rounded-[20px] transition-colors duration-600 ease-in-out hover:bg-yellow-500">
+        <button id="toggledark" class="btn-primary">
             Toggledark
         </button>
     </div>
 
-<body class="text-center dark:bg-slate-900 bg-white text-slate-900 dark:text-white border-10 border-orange-500 min-h-screen p-4">
-    <h1 class="text-3xl font-bold border-12 border-orange-500 inline-block p-2 my-4">~~JOHN DERENCE C. APOSAGA~~</h1>
+    <h1 class="text-3xl font-bold border-12 border-orange-500 inline-block p-2 my-4">~~DERENCE EVENT ORGANIZER~~</h1>
 
-    <header>
-        <h1 class="text-3xl text-orange-500 font-bold underline my-2">
-            Hello world!
+    <header class="text-center py-4">
+        <div class="inline-block bg-orange-400 text-black border-2 border-black font-black p-1">
+            LET'S GET THIS PARTY STARTED 
+        </div>
+
+        <h1 class="text-3xl font-extrabold text-orange-500 my-2">
+            Party Planning & Decorating Services 
         </h1>
-        <nav class="flex justify-between items-center mx-[50px] max-[600px]:flex-col">
-            <span class="text-ORANGE-400 text-[20px] border-2 border-orange-700 p-3 rounded-lg">
-                @APOSAGA
-            </span>
-            <ul class="flex gap-5 list-none max-[600px]:flex-col border-2 border-orange-700 p-3 rounded-lg">
-                <li><a href="#projects" class="hover:text-red-500">Projects</a></li>
-                <li><a href="#services" class="hover:text-red-300">Services</a></li>
-                <li><a href="#contact" class="hover:text-red-200">Contact Me</a></li>
-            </ul>
-        </nav>
+        <p class="text-sm font-semibold text-secondary my-3">
+            FB: Derence Event Organizer | X: @DerenceEvents | IG: @DerenceEvents
+        </p>
     </header>
 
-    <main class="flex flex-wrap gap-[30px] p-[50px] m-[50px] max-[600px]:p-[15px] max-[600px]:m-[10px]">
-        <!-- Projects -->
-        <section id="projects" class="flex-1 min-w-[280px] border-2 border-black p-5 bg-orange-400 max-[600px]:min-w-0">
-            <h2 class="max-[768px]:text-[48px] max-[768px]:text-blue-500">
-                My Projects
+    <!-- Main Layout -->
+    <main class="flex flex-col gap-6 p-[30px] mx-auto max-w-4xl text-left">
+        
+        <!-- 1. Services Card -->
+        <section id="services" class="card-secondary">
+            <h2 class="text-2xl font-bold max-[768px]:text-[32px] max-[768px]:text-blue-500 mb-3 text-center">
+                Our Services
             </h2>
-            <p>
-                Personal portfolio, payroll system, company website, startup website, and compliance monitoring system.
+
+        
+           
+            <ul class="space-y-2 text-sm">
+                <li>
+                    <strong class="font-semibold">• Full Event Planning:</strong> 
+                    End-to-end management, budgets & timelines.
+                </li>
+                <li>
+                    <strong class="font-semibold">• Theme Styling & Floral Decor:</strong> 
+                    Custom visuals, backdrops & arrangements.
+                </li>
+                <li>
+                    <strong class="font-semibold">• Venue Coordination:</strong> 
+                    Sourcing, layouts & on-site logistics.
+                </li>
+                <li>
+                    <strong class="font-semibold">• Catering Management:</strong> 
+                    Menu curation, tastings & service oversight.
+                </li>
+                <li>
+                    <strong class="font-semibold">• Host & Entertainment:</strong> 
+                    Professional MCs, DJs, live bands & stage acts.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Navigation Menu -->
+        <nav class="flex justify-center my-2">
+            <ul class="flex gap-5 list-none max-[600px]:flex-col border-2 border-orange-700 p-3 rounded-lg">
+                <li><a href="#events" class="hover:text-red-500">Past Events</a></li>
+                <li><a href="#services" class="hover:text-red-300">Services</a></li>
+                <li><a href="#contact" class="hover:text-red-200">Book Event</a></li>
+            </ul>
+        </nav>
+
+        <!-- 2. Featured Events Card (Wider Image) -->
+        <section id="events" class="card-primary">
+            <h2 class="text-3xl font-extrabold max-[768px]:text-[32px] max-[768px]:text-blue-500 mb-4 text-center">
+                FEATURED EVENTS
+            </h2>
+
+            <img src="c:\Users\lab1\Downloads\kids-birthday-party-planning-guide-hero.B2NhShkQ_1NAqR3.webp" 
+                 alt="Party Setup" 
+                 class="w-full h-auto max-h-[350px] object-cover rounded-lg border-2 border-black my-4 shadow-sm">
+
+            <p class="text-center font-bold text-lg leading-relaxed uppercase">
+                Weddings • 18th Birthdays / Debut Parties • Corporate Galas • Grand Openings • Kids' Themed Birthday Parties • Baby Showers • Anniversary Celebrations • Holiday Parties
             </p>
         </section>
 
-        <!-- Services -->
-        <section id="services" class="flex-1 min-w-[280px] border-2 border-black-300 dark:border-slate-800 dark:bg-slate-900 p-5 bg-orange-200 max-[600px]:min-w-0">
-            <h2 class="max-[768px]:text-[48px] max-[768px]:text-blue-500">
-                My Services
+        <!-- 3. Event Booking Form Card -->
+        <section id="contact" class="card-primary">
+            <h2 class="text-2xl font-bold max-[768px]:text-[32px] max-[768px]:text-blue-500 mb-4 text-center">
+                Book Your Event With Us!
             </h2>
-            <p>
-                Website Creation, System Creation, AI Automation, Database Management, Project Management, Systems Analyst
-            </p>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="flex-1 min-w-[280px] border-2 border-black p-5 bg-orange-500 max-[600px]:min-w-0">
-            <h2 class="max-[768px]:text-[48px] max-[768px]:text-blue-500">
-                Let's build together!
-            </h2>
-            <form action="#" class="flex flex-col gap-5">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" required class="border border-gray-400 p-2 text-black dark:text-white">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required class="border border-gray-400 p-2 text-black dark:text-white">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required class="border border-gray-400 p-2 text-black dark:text-white"></textarea>
-                <button type="submit" class="bg-black text-white p-3 rounded-[15px] hover:bg-red-500">
-                    Send Message
+            <form action="#" class="flex flex-col gap-4">
+                <label for="name" class="font-medium">Name</label>
+                <input id="name" name="name" type="text" required class="border border-gray-400 p-2 text-black dark:text-white bg-white dark:bg-slate-800 rounded">
+                
+                <label for="email" class="font-medium">Email</label>
+                <input id="email" name="email" type="email" required class="border border-gray-400 p-2 text-black dark:text-white bg-white dark:bg-slate-800 rounded">
+                
+                <label for="message" class="font-medium">Event Details & Target Date</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your event..." required class="border border-gray-400 p-2 text-black dark:text-white bg-white dark:bg-slate-800 rounded"></textarea>
+                
+                <button type="submit" class="btn-primary mt-2">
+                    Send 
                 </button>
             </form>
         </section>
-    </main>
 
-    
+    </main>
 
     <script src="script.js"></script>
     <script>
